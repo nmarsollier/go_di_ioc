@@ -96,7 +96,7 @@ Aclarando que la inyección de dependencias es una buena practica, y recomendabl
 
 ## Uso de Factory Methods como IoC
 
-Si partimos los patrones generales de asignación de responsabilidades [GRASP](https://es.wikipedia.org/wiki/GRASP), una de las formas clasicas y adecuadas de uso de IoC es el uso de Factory Methods.
+Si partimos los patrones generales de asignación de responsabilidades [GRASP](https://es.wikipedia.org/wiki/GRASP), una de las formas clásicas y adecuadas de uso de IoC es el uso de Factory Methods.
 
 Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la instanciación a funciones factory.
 
@@ -204,7 +204,7 @@ Podemos citar muchas referencias a ésto desde el mismo sitio de [Go](https://go
 
 Ahora bien, si en lugar de tomar un enfoque OO, aprovechamos las capacidades de Go para programar en forma funcional, podemos encontrarnos con un código mas prolijo y directo.
 
-### Go en forma Funciona ? se puede.
+### Go en forma Funcional ? se puede.
 
 Siguiendo los lineamientos de single Responsability debería ser bastante común en nuestro código tener servicios con una sola función.
 
@@ -294,7 +294,7 @@ La programación OO esta muy bien, solo que esta muy subestimada la forma en la 
 
 El libro Domain Driven Design de Erik Evans, expresa una forma conceptualmente adecuada de implementar POO, sin embargo es muy raro ver algo claro y bien implementado.
 
-Muchos desarrolladores entienden que el concepto de Clean Architecture y DDD solo va en generar interfaces hacia todo lo que entra y sale del negocio, pero olvidan lo fundamental, respetar los patrones básicos para que el código sea sustentaba, que es donde se encuentra el balance de simplicidad necesario.
+Muchos desarrolladores entienden que el concepto de Clean Architecture y DDD solo va en generar interfaces hacia todo lo que entra y sale del negocio, pero olvidan lo fundamental, respetar los patrones básicos para que el código sea sustentable, que es donde se encuentra el balance de simplicidad necesario.
 
 La programación OO no es aplicar la misma regla y norma a todo, sino, requiere el uso del energía cerebral para que nuestros diseños tengan la complejidad justa y necesaria. Y eso es muy difícil de adquirir. 
 
@@ -302,4 +302,4 @@ Y a su vez, la POO requiere un mantenimiento adecuado, el refactor continuo debe
 
 Por otro lado un enfoque funcional es mucho mas simple, el refactor es simple, lo que debemos adoptar es simplemente una separación clara del negocio con las dependencias que usa y que usan al mismo. Teniendo esa separación en capas bien lograda, el resultado es elegante, simple y sobre todo, muy eficiente.
 
-En las empresas en general mas de la mitad de los desarrolladores tendrán poca experiencia, muchos de ellos estarán dando sus primeros pasos, por lo que esta simplicidad es bienvenida.
+En las empresas en general mas de la mitad de los desarrolladores tendrán poca experiencia, muchos de ellos estarán dando sus primeros pasos, por lo que ésta simplicidad es bienvenida.

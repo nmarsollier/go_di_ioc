@@ -1,6 +1,10 @@
-# Programación Funcional e Inversión de Control en GO
+# Capítulo 1: Programación Funcional e Inversión de Control en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
+
+Esta es una serie de tutoriales sobre patrones simples de programación en GO.
+
+[Capítulo 2: REST Controllers en go](https://github.com/nmarsollier/go_rest_controller)
 
 ## Inyección de Dependencias
 

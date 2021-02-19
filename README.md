@@ -1,11 +1,6 @@
 # Capítulo 1: Programación Funcional e Inversión de Control en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
-
-Esta es una serie de tutoriales sobre patrones simples de programación en GO.
-
-[Capítulo 2: REST Controllers en go](https://github.com/nmarsollier/go_rest_controller)
-
 ## Inyección de Dependencias
 
 _Spoiler alert: Es lo que debemos cambiar_
@@ -307,3 +302,9 @@ Y a su vez, la POO requiere un mantenimiento adecuado, el refactor continuo debe
 Por otro lado un enfoque funcional es mucho mas simple, el refactor es simple, lo que debemos adoptar es simplemente una separación clara del negocio con las dependencias que usa y que usan al mismo. Teniendo esa separación en capas bien lograda, el resultado es elegante, simple y sobre todo, muy eficiente.
 
 En las empresas en general mas de la mitad de los desarrolladores tendrán poca experiencia, muchos de ellos estarán dando sus primeros pasos, por lo que ésta simplicidad es bienvenida.
+
+## Nota
+
+Esta es una serie de tutoriales sobre patrones simples de programación en GO.
+
+[Capítulo 2: REST Controllers en go](https://github.com/nmarsollier/go_rest_controller)

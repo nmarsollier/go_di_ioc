@@ -282,7 +282,7 @@ Este concepto de programar en forma funcional simplifica mucho la programación 
 - No hacemos DI
 - Single Responsibility
 - Código mas simple de leer y mantener
-- Podemos visualizar mejor la programación declarativa del paradigma funcional
+- Podemos visualizar mejor la programación imperativa del paradigma funcional
 - Llevamos el concepto de [Interface segregation](https://en.wikipedia.org/wiki/Interface_segregation_principle) a su mínima expresión, una función, algo deseable en POO
 
 Incluso podemos hacer strategy si planificamos bien los factories, sin necesidad del uso de interfaces.

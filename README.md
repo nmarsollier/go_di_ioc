@@ -1,4 +1,4 @@
-# Capítulo 1: DI y IoC en GO
+# DI y IoC en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
 ## Inyección de Dependencias
@@ -191,5 +191,3 @@ Ventajas:
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.
 
 [Tabla de Contenidos](https://github.com/nmarsollier/go_index)
-
-[Capitulo 2: Un enfoque mas funcional de Go](https://github.com/nmarsollier/go_functional)

@@ -13,9 +13,9 @@ La mayoría de los autores recomiendan inyección de dependencias para separa ca
 
 Nuestro código luce como el siguiente: 
 
-```
-	srv := service.NewService(dao.NewDao())
-	fmt.Println(srv.SayHello())
+``
+srv := service.NewService(dao.NewDao())
+fmt.Println(srv.SayHello())
 ```
 
 donde Service es algo como lo siguiente :
@@ -152,13 +152,13 @@ En este caso el factory del DAO esta implementado en el Service, lo que nos perm
 Para realizar mocks en los tests solo tenemos que definir un valor para mockedDao
 
 ```
-	mockedDao = new(daoMock)
+mockedDao = new(daoMock)
 
-	s := NewService()
-	assert.Equal(t, "Hello", s.SayHello())
+s := NewService()
+assert.Equal(t, "Hello", s.SayHello())
 
-	// Volvemos al original
-	mockedDao = nil
+// Volvemos al original
+mockedDao = nil
 ```
 
 Al ser privado mockedDao no afecta al uso de la librería. Suena hacky, pero en realidad si hay algo que puede ser hacky es el test, es preferible que el test quede hacky a que toda la aplicación quede sobre estructurada solo para poder testear.
@@ -260,14 +260,14 @@ En caso que el if nos cause ruido, podemos apuntar directamente el puntero sayHe
 El test en cuestión es el siguiente :
 
 ```
-	// Cuando testeamos la reescribimos con el
-	// mock que queramos
-	sayHelloMock = func() string {
-		return "Hello"
-	}
+// Cuando testeamos la reescribimos con el
+// mock que queramos
+sayHelloMock = func() string {
+	return "Hello"
+}
 
-	assert.Equal(t, "Hello", SayHello())
-	sayHelloMock = nil
+assert.Equal(t, "Hello", SayHello())
+sayHelloMock = nil
 ```
 
 La estrategia de utilizar un puntero a una función, conceptualmente es la misma que utilizar una interfaz, en su forma mas simple un puntero a una función define una interfaz a respetar.

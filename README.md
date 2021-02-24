@@ -13,7 +13,7 @@ La mayoría de los autores recomiendan inyección de dependencias para separa ca
 
 Nuestro código luce como el siguiente: 
 
-``
+```
 srv := service.NewService(dao.NewDao())
 fmt.Println(srv.SayHello())
 ```

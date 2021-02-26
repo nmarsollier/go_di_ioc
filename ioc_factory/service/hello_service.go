@@ -12,25 +12,14 @@ type HelloService struct {
 	dao IHelloDao
 }
 
-// NewService es una funcion que puede mockearse
+// NewService es una función que puede mockearse
 func NewService() *HelloService {
 	return &HelloService{
-		buildDao(),
+		dao.NewDao(),
 	}
 }
 
 // SayHello es nuestro metodo de negocio
 func (s *HelloService) SayHello() string {
 	return s.dao.Hello()
-}
-
-// MockedDao es un DAO que nos permite mockear los tests
-var MockedDao IHelloDao = nil
-
-func buildDao() IHelloDao {
-	if MockedDao != nil {
-		return MockedDao
-	}
-
-	return dao.NewDao()
 }

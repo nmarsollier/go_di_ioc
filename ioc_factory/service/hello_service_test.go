@@ -15,11 +15,10 @@ func (d daoMock) Hello() string {
 
 func TestSayHelo(t *testing.T) {
 	// Mockeamos
-	MockedDao = new(daoMock)
+	mockedDao := new(daoMock)
 
-	s := NewService()
+	s := HelloService{
+		mockedDao,
+	}
 	assert.Equal(t, "Hello", s.SayHello())
-
-	// Volvemos al original
-	MockedDao = nil
 }

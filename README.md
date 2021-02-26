@@ -195,6 +195,16 @@ Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory 
 
 [Patrón de diseño](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)
 
+[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
+
+[KISS](https://en.wikipedia.org/wiki/KISS_principle)
+
+[InterfaceImplementationPair](https://martinfowler.com/bliki/InterfaceImplementationPair.html)
+
+[Foo/FooImpl pairs - stop doing it!](http://wrschneider.github.io/2015/07/27/foo-fooimpl-pairs.html)
+
+[When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
+
 ## Nota
 
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.

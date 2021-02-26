@@ -1,3 +1,5 @@
+[English version](https://github.com/nmarsollier/go_di_ioc/blob/main/README_en.md)
+
 # DI y IoC en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
@@ -209,4 +211,4 @@ Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory 
 
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.
 
-[Tabla de Contenidos](https://github.com/nmarsollier/go_index)
+[Tabla de Contenidos](https://github.com/nmarsollier/go_index/blob/main/README.md)

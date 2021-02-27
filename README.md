@@ -1,6 +1,6 @@
 [English version](https://github.com/nmarsollier/go_di_ioc/blob/main/README_en.md)
 
-# DI y IoC en GO
+# DI e IoC en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
 ## Inyección de Dependencias

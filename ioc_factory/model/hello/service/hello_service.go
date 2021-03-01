@@ -1,6 +1,6 @@
 package service
 
-import "github.com/nmarsollier/go_di_ioc/ioc_factory/dao"
+import "github.com/nmarsollier/go_di_ioc/ioc_factory/model/hello/dao"
 
 // IHelloDao interface DAO necesaria a inyectar en el service
 type IHelloDao interface {

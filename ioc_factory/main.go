@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/nmarsollier/go_di_ioc/ioc_factory/service"
+	"github.com/nmarsollier/go_di_ioc/ioc_factory/model/hello/service"
 )
 
 func main() {

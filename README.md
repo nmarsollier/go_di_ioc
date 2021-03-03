@@ -17,14 +17,14 @@ En Go la estrategia mas común es la de Inyección de Dependencias pasada por Co
 
 Nuestro código luce como el siguiente: 
 
-```
+```go
 srv := service.NewService(dao.NewDao())
 fmt.Println(srv.SayHello())
 ```
 
 donde Service es algo como lo siguiente :
 
-```
+```go
 // IHelloDao interface DAO necesaria a inyectar en el service
 type IHelloDao interface {
 	Hello() string
@@ -80,7 +80,7 @@ Este ejemplo lo encontramos en [ioc_factory](./ioc_factory/)
 
 Como vemos en la función main: la creación del service no esta acoplada a la creación del dao.
 
-```
+```go
 	srv := service.NewService()
 
 	fmt.Println(srv.SayHello())
@@ -90,7 +90,7 @@ Sino mas bien el mismo service se encarga de crear el dao que corresponda según
 
 Esto esta muy en linea con el patrón experto.
 
-```
+```go
 // NewService es una función que puede mockearse
 func NewService() *HelloService {
 	return &HelloService{
@@ -101,7 +101,7 @@ func NewService() *HelloService {
 
 Donde dao.NewDao() es exactamente esta función que nos devuelve una dependencia, haciendo posible la inversión de control.
  
-```
+```go
 // NewDao es el factory
 func NewDao() *HelloDao {
 	return new(HelloDao)
@@ -112,7 +112,7 @@ Si existe una estrategia de construcción, digamos, singleton, pool de objetos, 
 
 Para realizar mocks en los tests solo tenemos que definir un valor para mockedDao
 
-```
+```go
 func TestSayHelo(t *testing.T) {
 	// Mockeamos
 	mockedDao := new(daoMock)

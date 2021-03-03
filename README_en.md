@@ -18,14 +18,14 @@ In Go the mos common strategy is to use Dependency Injection by constructor func
 
 The code looks like: 
 
-```
+```go
 srv := service.NewService(dao.NewDao())
 fmt.Println(srv.SayHello())
 ```
 
 where Service is something like :
 
-```
+```go
 // IHelloDao DAO interface to inject service
 type IHelloDao interface {
 	Hello() string
@@ -81,7 +81,7 @@ Using factory method, we can avoid dependency injections by client constructors,
 
 Lets check the code in the main method: the client creation is not coupled anymore with the service, it's simple, and decouples the main method to create a dependency.
 
-```
+```go
 	srv := service.NewService()
 
 	fmt.Println(srv.SayHello())
@@ -91,7 +91,7 @@ That is aligned to the expert pattern.
 
 Lets check the instance creation :
 
-```
+```go
 func NewService() *HelloService {
 	return &HelloService{
 		dao.NewDao(),
@@ -101,7 +101,7 @@ func NewService() *HelloService {
 
 The service fetch a Dao implementation from the Dao factory, that is the artifact that knows how to build the dao, and that is out IoC strategy.
  
-```
+```go
 func NewDao() *HelloDao {
 	return new(HelloDao)
 }
@@ -113,7 +113,7 @@ Also there could be many factory functions, not a single one, solving different 
 
 To mock tests, we just create the struct.
 
-```
+```go
 func TestSayHelo(t *testing.T) {
 	// Mockeamos
 	mockedDao := new(daoMock)

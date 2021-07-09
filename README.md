@@ -3,15 +3,16 @@
 # DI e IoC en GO
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
+
 ## Inyección de Dependencias
 
 _Spoiler alert: Es lo que debemos cambiar_
 
-Es esa estrategia de IoC que nos permite insertar dependencias en una clase para que sean usadas internamente
+Es esa estrategia de IoC que nos permite insertar dependencias en una *clase* para que sean usadas internamente
 
 En la carpeta [ejemplo_tradicional](./ejemplo_tradicional/) tenemos los ejemplos de código.
 
-La mayoría de los autores recomiendan inyección de dependencias para separar capas lógicas de código, y desacoplar los servicios de los clientes. 
+La mayoría de los programadores recomiendan inyección de dependencias para separar capas lógicas de código, y desacoplar los servicios de los clientes. 
 
 En Go la estrategia mas común es la de Inyección de Dependencias pasada por Constructor.
 

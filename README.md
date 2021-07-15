@@ -4,11 +4,9 @@
 
 Este repositorio plantea alternativas de manejo de dependencias, a la programación tradicional de un proyecto Go. 
 
-## Inyección de Dependencias
+## Mal uso de Inyección de Dependencias
 
-_Spoiler alert: Es lo que debemos cambiar_
-
-Es esa estrategia de IoC que nos permite insertar dependencias en una *clase* para que sean usadas internamente
+Es esa estrategia de IoC que nos permite proveer dependencias en una estructura de datos para que sean usadas internamente
 
 En la carpeta [ejemplo_tradicional](./ejemplo_tradicional/) tenemos los ejemplos de código.
 
@@ -46,22 +44,12 @@ func (s HelloService) SayHello() string {
 	return s.dao.Hello()
 }
 ```
-
-Se implementa generalmente pasando una instancia de las dependencias necesarias en constructor.
-
-Según la bibliografía este tipo de patrón nos :
-
-- Permite desacoplar nuestro código, de forma que el cliente pueda ser configurable
-- Reduce la complejidad de código.
-- Los clientes son mas independientes.
-- Permite hacer código reusable, y testable.
-- Permite mockear tests.
  
-_Y esto es cierto, pero hasta cierto punto_
+En una estrategia como la anterio no desacoplamos realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo. 
 
-Porque no desacoplamos realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo. 
+Podemos revisar las raices de programacion orientada a objetos y darnos cuenta que incluso iría en contra del principio de [Information Expert](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)#Information_expert), que nos dice que las dependencias deben ser instanciadas en el lugar donde se tiene la informacion, de modo tal que por ejemplo crear las dependencias de un servicio en la capa de controladores, genera acoplamiento y nuestro código ya no seria cohesivo.
 
-Los clientes no quedan desacoplados completamente, porque siempre están acoplados a una interfaz que respetar.
+La realidad, es que se usa porque nos da la posibilidad de mockear esas dependencias para realizar buenos testings. Sin embargo existen muchas alternativas que podemos usar sin llegar a usar DI.
 
 ## Uso de Factory Methods como IoC
 
@@ -75,7 +63,7 @@ Si partimos los patrones generales de asignación de responsabilidades GRASP, un
 
 Pensemos en ese factory method, como parte de un framework de inyección de dependencias, que dependiendo del contexto nos va a retornar la instancia correcta del servicio que necesitemos. Lo que tiene de adecuado este patrón, es que la estrategia de creación, se escribe junto a los servicios, por lo que queda mucho mas claro el funcionamiento del mismo.
 
-Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la instanciación a funciones factory.
+Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la instanciación a funciones factory que estan en el lugar adecuado.
 
 Este ejemplo lo encontramos en [ioc_factory](./ioc_factory/)
 

@@ -196,6 +196,8 @@ Cuando tenemos DI por constructor, no necesariamente podríamos usar un Factory 
 
 [When to Mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html)
 
+[A theory of modern Golang](https://news.ycombinator.com/item?id=14521894)
+
 ## Nota
 
 Esta es una serie de tutoriales sobre patrones simples de programación en GO.

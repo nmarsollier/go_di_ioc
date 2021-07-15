@@ -74,9 +74,9 @@ Este ejemplo lo encontramos en [ioc_factory](./ioc_factory/)
 Como vemos en la función main: la creación del service no esta acoplada a la creación del dao.
 
 ```go
-	srv := service.NewService()
+srv := service.NewService()
 
-	fmt.Println(srv.SayHello())
+fmt.Println(srv.SayHello())
 ```
 
 Sino mas bien el mismo service se encarga de crear el dao que corresponda según el contexto. 

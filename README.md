@@ -45,7 +45,7 @@ func (s HelloService) SayHello() string {
 }
 ```
 
-Y esa es una buena practica, pero cuando las dependencias son realmente implementaciones que se ajusten a casos donde si se debe usar inyección de dependencias, aclarando que esta estrategia no está mal, el problema es cuando abusamos de ella en casos donde no es correcto usarse, en nuestros sistemas, la gran mayoria de dependencias no necesitan usar DI.
+Y esa es una buena practica, pero cuando las dependencias son realmente implementaciones que se ajusten a casos donde si se debe usar inyección de dependencias (ejemplo: Strategy pattern), aclarando que esta estrategia no está mal, el problema es cuando abusamos de ella en casos donde no es correcto usarse, en nuestros sistemas, la gran mayoria de dependencias no necesitan usar DI.
 
 Un uso como el anterior no desacopla realmente, todo lo contrario, terminamos acoplando mucho mas, nuestro código debe definir métodos bootstraps en lugares donde no deberían estar, acoplando todo el negocio en un archivo main.go por ejemplo. 
 
@@ -65,7 +65,7 @@ Un service locator, es básicamente un framework que conoce nuestras dependencia
 
 Si partimos los patrones generales de asignación de responsabilidades GRASP, una de las formas clásicas y adecuadas de construir objetos es el uso de Factory Methods.
 
-Pensemos en ese factory method, como parte de un framework de inyección de dependencias, que dependiendo del contexto nos va a retornar la instancia correcta del servicio que necesitemos. Lo que tiene de adecuado este patrón, es que la estrategia de creación, se escribe junto a los servicios, por lo que queda mucho mas claro el funcionamiento del mismo.
+Pensemos en ese factory method, como parte de un framework de inyección de dependencias, que dependiendo del contexto (parametros en el factory u ortro metodo) nos va a retornar la instancia correcta del servicio que necesitemos. Lo que tiene de adecuado este patrón, es que la estrategia de creación, se escribe junto a los servicios, por lo que queda mucho mas claro el funcionamiento del mismo.
 
 Esta estrategia nos permite evitar inyectar las dependencias en los constructores y delegar la instanciación a funciones factory que estan en el lugar adecuado.
 
@@ -101,7 +101,9 @@ func NewDao() *HelloDao {
 }
 ```
 
-Si existe una estrategia de construcción, digamos, singleton, pool de objetos, instancias individuales, o la que sea, esa función se hará cargo. A su vez, no necesariamente deba existir una función, podrían existir varios factories, algo que quedaría bastante bien organizado, y sobre todo bien encapsulado.
+Si existe una estrategia de construcción, digamos, singleton, pool de objetos, instancias individuales, o la que sea, esa función se hará cargo. 
+A su vez, no necesariamente deba existir una sola función, podrían existir varios factories, algo que quedaría bastante bien organizado, y sobre todo bien encapsulado.
+Tambien nos permite definir un contexto pasado por parametros para que nos devuelva la instancia ideal.
 
 > Si bien podriamos pensar que esta estrategia es un antipatron (Dependency Freak), no lo es, porque la realidad es que HelloDao no es algo externo a nuestra aplicacion, y no deberia usarse inyeccion de dependencias para instanciarlo. En el articulo (Introduction to Dependecy Injection)[https://kariera.future-processing.pl/blog/introduction-to-dependency-injection/], podemos notar aclaraciones puntuales sobre cuando debemos y cuando no debemos usar inyección de dependencias.
 
